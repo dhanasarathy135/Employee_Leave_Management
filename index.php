@@ -1,0 +1,6 @@
+<?php session_start(); ?>
+<!doctype html><html><head><title>Employee Leave Management</title><link rel="stylesheet" href="style.css"></head>
+<body><header><nav><b>🏢 Employee Leave Management</b><span>
+<a href="index.php">Home</a> <?php if(isset($_SESSION["employee_id"])): ?><a href="dashboard.php">Dashboard</a><a href="apply_leave.php">Apply Leave</a><a href="my_leaves.php">My Leaves</a><a href="logout.php">Logout</a><?php else: ?><a href="login.php">Employee Login</a><a href="register.php">Register</a><a href="admin/">Admin Login</a><?php endif; ?></span></nav></header>
+<section class="hero"><h1>Employee Leave Management System</h1><p>Apply for leave online and track approval status.</p><a class="btn" href="<?php echo isset($_SESSION["employee_id"])?"apply_leave.php":"register.php"; ?>">Get Started</a></section>
+<main class="container"><h2>Features</h2><div class="grid"><div class="card">👤<h3>Employee Registration</h3><p>Create an account.</p></div><div class="card">📝<h3>Leave Application</h3><p>Apply online.</p></div><div class="card">📊<h3>Leave Tracking</h3><p>Track approval status.</p></div><div class="card">⚙️<h3>Admin Management</h3><p>Review and update requests.</p></div></div></main></body></html>
